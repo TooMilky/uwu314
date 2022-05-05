@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "877905282949",
+    "firebase_url": "https://csit314-d4be3-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "csit314-d4be3",
+    "storage_bucket": "csit314-d4be3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:877905282949:android:1d06bf15faa97cb71e66ec",
+        "android_client_info": {
+          "package_name": "com.uwu.csit314"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "877905282949-t71oh9sh0lqts642a6v9pocshgmst54b.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBBLY_HicZ8OfKoj_SoihPy-VYmNNfbg5s"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "877905282949-t71oh9sh0lqts642a6v9pocshgmst54b.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
