@@ -5,6 +5,7 @@
       <map>
         <entry key="..\:/Users/Admin/AndroidStudioProjects/uwucsit314/app/src/main/res/drawable/background2.xml" value="0.196" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/uwucsit314/app/src/main/res/drawable/ic_access_time_black_24dp.xml" value="0.196" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/uwucsit314/app/src/main/res/drawable/ic_attach_money_black_24dp.xml" value="0.1875" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/uwucsit314/app/src/main/res/drawable/ic_exit_to_app_black_24dp.xml" value="0.196" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/uwucsit314/app/src/main/res/drawable/ic_favorite_border_black_24dp.xml" value="0.346" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/uwucsit314/app/src/main/res/drawable/ic_home_black_24dp.xml" value="0.196" />
@@ -14,7 +15,10 @@
         <entry key="..\:/Users/Admin/AndroidStudioProjects/uwucsit314/app/src/main/res/drawable/ic_security_black_24dp.xml" value="0.196" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/uwucsit314/app/src/main/res/drawable/ic_share_black_24dp.xml" value="0.33" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/uwucsit314/app/src/main/res/drawable/ic_shopping_cart_black_24dp.xml" value="0.196" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/uwucsit314/app/src/main/res/drawable/ic_star_black_24dp.xml" value="0.1875" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/uwucsit314/app/src/main/res/layout/activity_cart.xml" value="0.15760869565217392" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/uwucsit314/app/src/main/res/layout/activity_food_detail.xml" value="0.35260416666666666" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/uwucsit314/app/src/main/res/layout/activity_food_detail1.xml" value="0.15760869565217392" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/uwucsit314/app/src/main/res/layout/activity_food_list.xml" value="0.35260416666666666" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/uwucsit314/app/src/main/res/layout/activity_home.xml" value="0.17831813576494426" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/uwucsit314/app/src/main/res/layout/activity_home_drawer.xml" value="0.17395833333333333" />
