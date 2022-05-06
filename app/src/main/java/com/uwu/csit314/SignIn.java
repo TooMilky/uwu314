@@ -23,6 +23,9 @@ import com.uwu.csit314.Model.User;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.io.FileInputStream;
+import java.io.IOException;
+
 public class SignIn extends AppCompatActivity {
     EditText edtPhone, edtPassword, edtUsername;
     Button btnSignIn;
@@ -56,6 +59,7 @@ public class SignIn extends AppCompatActivity {
         //Init Firebase
         database = FirebaseDatabase.getInstance();
         table_user = database.getReference("User");
+        
 
 //        txtForgotPwd.setOnClickListener(new View.OnClickListener() {
 //            @Override

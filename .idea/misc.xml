@@ -6,12 +6,16 @@
         <entry key="..\:/Users/Admin/AndroidStudioProjects/uwucsit314/app/src/main/res/drawable/background2.xml" value="0.196" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/uwucsit314/app/src/main/res/drawable/ic_access_time_black_24dp.xml" value="0.196" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/uwucsit314/app/src/main/res/drawable/ic_exit_to_app_black_24dp.xml" value="0.196" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/uwucsit314/app/src/main/res/drawable/ic_favorite_border_black_24dp.xml" value="0.346" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/uwucsit314/app/src/main/res/drawable/ic_home_black_24dp.xml" value="0.196" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/uwucsit314/app/src/main/res/drawable/ic_launcher_background.xml" value="0.196" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/uwucsit314/app/src/main/res/drawable/ic_refresh_black_24dp.xml" value="0.1865" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/uwucsit314/app/src/main/res/drawable/ic_restaurant_black_24dp.xml" value="0.196" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/uwucsit314/app/src/main/res/drawable/ic_security_black_24dp.xml" value="0.196" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/uwucsit314/app/src/main/res/drawable/ic_share_black_24dp.xml" value="0.33" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/uwucsit314/app/src/main/res/drawable/ic_shopping_cart_black_24dp.xml" value="0.196" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/uwucsit314/app/src/main/res/layout/activity_cart.xml" value="0.15760869565217392" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/uwucsit314/app/src/main/res/layout/activity_food_list.xml" value="0.35260416666666666" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/uwucsit314/app/src/main/res/layout/activity_home.xml" value="0.17831813576494426" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/uwucsit314/app/src/main/res/layout/activity_home_drawer.xml" value="0.17395833333333333" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/uwucsit314/app/src/main/res/layout/activity_main.xml" value="0.18802083333333333" />
@@ -19,6 +23,7 @@
         <entry key="..\:/Users/Admin/AndroidStudioProjects/uwucsit314/app/src/main/res/layout/app_bar_home.xml" value="0.15579710144927536" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/uwucsit314/app/src/main/res/layout/content_home.xml" value="0.17831813576494426" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/uwucsit314/app/src/main/res/layout/dimens.xml" value="0.18802083333333333" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/uwucsit314/app/src/main/res/layout/food_item.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/uwucsit314/app/src/main/res/layout/layout.xml" value="0.358695652173913" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/uwucsit314/app/src/main/res/layout/layout2.xml" value="0.18802083333333333" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/uwucsit314/app/src/main/res/layout/menu_item.xml" value="0.17395833333333333" />

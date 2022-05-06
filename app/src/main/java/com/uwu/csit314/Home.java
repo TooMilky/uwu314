@@ -2,6 +2,7 @@ package com.uwu.csit314;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -37,7 +38,6 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.uwu.csit314.Common.Common;
-import com.uwu.csit314.Database.Database;
 import com.uwu.csit314.Interface.ItemClickListener;
 import com.uwu.csit314.Model.Banner;
 import com.uwu.csit314.Model.Category;
@@ -247,14 +247,47 @@ public class Home extends AppCompatActivity
 //    }
 
     private void loadMenu() {
+//        adapter.startListening();
+//        recycler_menu.setAdapter(adapter);
+//        swipeRefreshLayout.setRefreshing(false);
+//
+//        recycler_menu.getAdapter().notifyDataSetChanged();
+//        recycler_menu.scheduleLayoutAnimation();
 
-
+        final FirebaseRecyclerOptions options = new FirebaseRecyclerOptions.Builder()
+                .setQuery(category, Category.class)
+                .build();
+        adapter = new FirebaseRecyclerAdapter<Category, MenuViewHolder>(options) {
+            @Override
+            protected void onBindViewHolder( MenuViewHolder viewHolder, final int position,  Category model) {
+                viewHolder.txtMenuName.setText(model.getName());
+                Picasso.with(getBaseContext()).load(model.getImage())
+                        .into(viewHolder.imageView);
+                final Category clickItem = model;
+                viewHolder.setItemClickListener(new ItemClickListener() {
+                    @Override
+                    public void onClick(View v, int adapterPosition, boolean isLongClick) {
+                        //TODO: INDEX BY categoryId
+                        Intent serviceList = new Intent(Home.this, FoodList.class);
+                        int xd = viewHolder.getAbsoluteAdapterPosition();
+//                        Log.d("TAG", "Check category " +adapter.getRef(xd).getKey());
+//                        serviceList.putExtra("CategoryId", adapter.getRef(xd).getKey());
+                        serviceList.putExtra("CategoryId", "01");
+//                        items.get(position)
+//                        serviceList.putExtra("CategoryId", adapter.getRef(position).getKey());
+                        startActivity(serviceList);
+                    }
+                });
+            }
+            @Override
+            public MenuViewHolder onCreateViewHolder( ViewGroup parent, int viewType) {
+                View itemView = LayoutInflater.from(parent.getContext())
+                        .inflate(R.layout.menu_item, parent, false);
+                return new MenuViewHolder(itemView);
+            }
+        };
         adapter.startListening();
         recycler_menu.setAdapter(adapter);
-        swipeRefreshLayout.setRefreshing(false);
-
-        recycler_menu.getAdapter().notifyDataSetChanged();
-        recycler_menu.scheduleLayoutAnimation();
     }
 
 

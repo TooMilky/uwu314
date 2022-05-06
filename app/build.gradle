@@ -26,6 +26,10 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+    packagingOptions {
+        exclude 'META-INF/DEPENDENCIES'
+        exclude 'META-INF/INDEX.LIST'
+    }
 }
 
 dependencies {
@@ -33,7 +37,8 @@ dependencies {
     implementation 'androidx.appcompat:appcompat:1.4.1'
     implementation 'com.google.android.material:material:1.5.0'
     implementation 'com.google.firebase:firebase-analytics'
-    implementation platform('com.google.firebase:firebase-bom:29.3.1')
+    implementation platform('com.google.firebase:firebase-bom:28.1.0')
+//    implementation platform('com.google.firebase:firebase-bom:29.3.1')
     implementation 'com.google.firebase:firebase-database:20.0.4'
     implementation 'androidx.drawerlayout:drawerlayout:1.1.1'
     testImplementation 'junit:junit:4.13.2'
@@ -63,5 +68,7 @@ dependencies {
     implementation 'com.squareup.picasso:picasso:2.5.2'
     implementation 'io.github.pilgr:paperdb:2.7.2'
     implementation 'com.readystatesoftware.sqliteasset:sqliteassethelper:+'
+
+//    implementation 'com.google.firebase:firebase-admin:8.1.0'
 
 }
