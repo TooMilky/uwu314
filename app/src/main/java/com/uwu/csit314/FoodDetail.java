@@ -27,6 +27,7 @@ import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 import com.squareup.picasso.Picasso;
 import com.uwu.csit314.Common.Common;
+import com.uwu.csit314.Database.Database;
 import com.uwu.csit314.Model.Food;
 import com.uwu.csit314.Model.Order;
 
@@ -95,9 +96,9 @@ public class FoodDetail extends AppCompatActivity {
 //            }
 //        });
 
-//        btnCart.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
+        btnCart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 //                new Database(getBaseContext()).addToCart(new Order(
 //                        FoodId,
 //                        currentFood.getName(),
@@ -107,10 +108,10 @@ public class FoodDetail extends AppCompatActivity {
 //                        currentFood.getImage()
 //                ));
 //                Toast.makeText(FoodDetail.this, "Added to Cart", Toast.LENGTH_SHORT).show();
-//            }
-//        });
+            }
+        });
 
-//        btnCart.setCount(new Database(this).getCountCart());
+        btnCart.setCount(new Database(this).getCountCart());
         food_description = (TextView)findViewById(R.id.food_description);
         food_name = (TextView)findViewById(R.id.food_name);
         food_price = (TextView)findViewById(R.id.food_price);

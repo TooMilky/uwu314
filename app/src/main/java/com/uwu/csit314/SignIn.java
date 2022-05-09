@@ -31,14 +31,7 @@ public class SignIn extends AppCompatActivity {
     Button btnSignIn;
     CheckBox ckbRemember;
     TextView txtForgotPwd;
-
-    FirebaseDatabase database;
-    DatabaseReference table_user;
-
-//    @Override
-//    protected void attachBaseContext(Context newBase) {
-//        super.attachBaseContext(CalligraphyContextWrapper.wrap(newBase));
-//    }
+    DBHandler DB;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,13 +46,11 @@ public class SignIn extends AppCompatActivity {
         btnSignIn = findViewById(R.id.btnSignIn);
         ckbRemember =findViewById(R.id.ckbRemember);
         txtForgotPwd = findViewById(R.id.txtForgotPwd);
+        DB = new DBHandler(this);
 
 //        Paper.init(this);
 
-        //Init Firebase
-        database = FirebaseDatabase.getInstance();
-        table_user = database.getReference("User");
-        
+
 
 //        txtForgotPwd.setOnClickListener(new View.OnClickListener() {
 //            @Override
@@ -72,57 +63,22 @@ public class SignIn extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-//                Toast.makeText(SignIn.this, "AAAAAAAAA!", Toast.LENGTH_SHORT).show();
+                String user = edtUsername.getText().toString();
+                String pass = edtPassword.getText().toString();
 
-//                if (Common.isConnectedToInternet(getBaseContext())) {
+                if(user.equals("")||pass.equals(""))
+                    Toast.makeText(SignIn.this, "Please enter all the fields", Toast.LENGTH_SHORT).show();
+                else{
+                    Boolean checkuserpass = DB.checkusernamepassword(user, pass);
+                    if(checkuserpass==true){
+                        Toast.makeText(SignIn.this, "Sign in successfull", Toast.LENGTH_SHORT).show();
+                        Intent intent  = new Intent(getApplicationContext(), Home.class);
+                        startActivity(intent);
+                    }else{
+                        Toast.makeText(SignIn.this, "Invalid Credentials", Toast.LENGTH_SHORT).show();
+                    }
+                }
 
-//                    if (ckbRemember.isChecked())
-//                    {
-//                        Paper.book().write(Common.USER_KEY, edtPhone.getText().toString());
-//                        Paper.book().write(Common.PWD_KEY, edtPassword.getText().toString());
-//
-//                    }
-                    final ProgressDialog mDialog = new ProgressDialog(SignIn.this);
-                    mDialog.setMessage("Loading...");
-                    mDialog.show();
-
-                    table_user.addListenerForSingleValueEvent(new ValueEventListener() {
-                        @Override
-                        public void onDataChange(DataSnapshot dataSnapshot) {
-                            if (dataSnapshot.child(edtUsername.getText().toString()).exists()) {
-                                //Get User Information
-                                mDialog.dismiss();
-                                User user = dataSnapshot.child(edtUsername.getText().toString()).getValue(User.class);
-                                user.setName(edtUsername.getText().toString());
-                                // check if password in db is same as input
-                                if (user.getPassword().equals(edtPassword.getText().toString())) {
-
-                                    Intent homeIntent = new Intent(SignIn.this, Home.class);
-                                    Common.currentUser = user;
-                                    startActivity(homeIntent);
-                                    finish();
-
-                                    table_user.removeEventListener(this);
-                                } else {
-                                    //displaypageerror?
-                                    Toast.makeText(SignIn.this, "Wrong Password !", Toast.LENGTH_SHORT).show();
-                                }
-                            } else {
-//                                mDialog.dismiss();
-                                Toast.makeText(SignIn.this, "User does not exist in Database", Toast.LENGTH_SHORT).show();
-                            }
-                        }
-
-                        @Override
-                        public void onCancelled(DatabaseError databaseError) {
-
-                        }
-                    });
-//                }
-//                else{
-//                    Toast.makeText(SignIn.this, "Please check your connection", Toast.LENGTH_SHORT).show();
-//                    return;
-//                }
             }
 
         });
