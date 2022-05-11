@@ -38,6 +38,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.uwu.csit314.Common.Common;
+import com.uwu.csit314.Database.Database;
 import com.uwu.csit314.Interface.ItemClickListener;
 import com.uwu.csit314.Model.Banner;
 import com.uwu.csit314.Model.Category;
@@ -142,16 +143,16 @@ public class Home extends AppCompatActivity
 
 //        Paper.init(this);
 
-//        fab = (CounterFab) findViewById(R.id.fab);
-//        fab.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Intent cartIntent = new Intent(Home.this, Cart.class);
-//                startActivity(cartIntent);
-//            }
-//        });
-//
-//        fab.setCount(new Database(this).getCountCart());
+        fab = (CounterFab) findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent cartIntent = new Intent(Home.this, Cart.class);
+                startActivity(cartIntent);
+            }
+        });
+
+        fab.setCount(new Database(this).getCountCart());
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(

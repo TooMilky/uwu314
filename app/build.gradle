@@ -26,6 +26,9 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+    buildFeatures {
+        viewBinding true
+    }
     packagingOptions {
         exclude 'META-INF/DEPENDENCIES'
         exclude 'META-INF/INDEX.LIST'
@@ -70,7 +73,10 @@ dependencies {
     implementation 'com.readystatesoftware.sqliteasset:sqliteassethelper:+'
     implementation 'com.cepheuen.elegant-number-button:lib:1.0.2'
 
-    implementation 'com.amulyakhare:com.amulyakhare.textdrawable:1.0.1'
+//    implementation 'com.github.jd-alexander:android-flat-button:v1.1'
+//    implementation 'com.rengwuxian.materialedittext:library:2.1.4'
+//    implementation 'com.amulyakhare:com.amulyakhare.textdrawable:1.0.1'
+
 
 
     // this throws error

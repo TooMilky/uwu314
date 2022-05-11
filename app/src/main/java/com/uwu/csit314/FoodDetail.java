@@ -14,7 +14,6 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.andremion.counterfab.CounterFab;
-//import com.cepheuen.elegantnumberbutton.view.ElegantNumberButton;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.appbar.CollapsingToolbarLayout;
@@ -34,6 +33,7 @@ import com.uwu.csit314.Model.Order;
 import androidx.appcompat.widget.Toolbar;
 
 import java.util.Arrays;
+import com.cepheuen.elegantnumberbutton.view.ElegantNumberButton;
 
 public class FoodDetail extends AppCompatActivity {
 
@@ -66,18 +66,10 @@ public class FoodDetail extends AppCompatActivity {
 //                .setDefaultFontPath("fonts/restaurant_font.otf")
 //                .setFontAttrId(R.attr.fontPath)
 //                .build());
-//        setContentView(R.layout.activity_cart);
+        setContentView(R.layout.activity_cart);
 
         setContentView(R.layout.activity_food_detail);
-//        btnShowComment = (FButton)findViewById(R.id.btnShowComment);
-//        btnShowComment.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent = new Intent(FoodDetail.this, ShowComment.class);
-//                intent.putExtra(Common.INTENT_FOOD_ID, FoodId);
-//                startActivity(intent);
-//            }
-//        });
+
 
         //Firebase
         database = FirebaseDatabase.getInstance();
@@ -85,16 +77,9 @@ public class FoodDetail extends AppCompatActivity {
         ratingTbl = database.getReference("Rating");
 
 //        numberButton = (ElegantNumberButton)findViewById(R.id.number_button);
+//        numberButton.setNumber("1");
         btnCart = (CounterFab) findViewById(R.id.btnCart);
-//        btn_rating = (FloatingActionButton)findViewById(R.id.btn_rating);
-//        ratingBar = (RatingBar)findViewById(R.id.RatingBar);
 
-//        btn_rating.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                showRatingDialog();
-//            }
-//        });
 
         btnCart.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -107,7 +92,7 @@ public class FoodDetail extends AppCompatActivity {
 //                        currentFood.getDiscount(),
 //                        currentFood.getImage()
 //                ));
-//                Toast.makeText(FoodDetail.this, "Added to Cart", Toast.LENGTH_SHORT).show();
+                Toast.makeText(FoodDetail.this, "Added to Cart", Toast.LENGTH_SHORT).show();
             }
         });
 
