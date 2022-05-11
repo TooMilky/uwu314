@@ -15,6 +15,9 @@ public class Category {
         CategoryId = CategoryId;
     }
 
+    public Category(int categoryId, String image, String name) {
+    }
+
     public String getName() {
         return Name;
     }

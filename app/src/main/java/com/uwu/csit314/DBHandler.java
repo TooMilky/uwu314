@@ -6,9 +6,13 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.database.sqlite.SQLiteQueryBuilder;
 
 import com.google.firebase.auth.FirebaseAuth;
-import com.uwu.csit314.Model.Order;
+import com.uwu.csit314.Model.Category;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class DBHandler extends SQLiteOpenHelper {
 
@@ -71,6 +75,19 @@ public class DBHandler extends SQLiteOpenHelper {
                 "Discount TEXT," +
                 "Image TEXT)";
 
+        //
+        String rolesQuery = "CREATE TABLE " + "roles" + " ("
+                + "id" + " INTEGER PRIMARY KEY AUTOINCREMENT, "
+                + "role" + " TEXT)";
+
+        String userRolesQuery = "create table users_roles(\n" +
+                "    user_role_id integer not null primary key,\n" +
+                "    user_id integer not null,\n" +
+                "    role_id integer not null,\n" +
+                "    FOREIGN KEY(user_id) REFERENCES users(id),\n" +
+                "    FOREIGN KEY(role_id) REFERENCES roles(id),\n" +
+                "    UNIQUE (user_id, role_id)\n" +
+                ");  ";
 
         // at last we are calling a exec sql
         // method to execute above sql query
@@ -78,9 +95,33 @@ public class DBHandler extends SQLiteOpenHelper {
         db.execSQL(menuQuery);
         db.execSQL(categoryQuery);
         db.execSQL(orderDetailQuery);
-//        initDB(db);
+        db.execSQL(rolesQuery);
+        db.execSQL(userRolesQuery);
+        initDB(db);
     }
 
+    // get all categories
+    public List<Category> getCategories(){
+        SQLiteDatabase db = getReadableDatabase();
+        SQLiteQueryBuilder qb = new SQLiteQueryBuilder();
+        String[] sqlselect ={"categoryId","image", "name"};
+        String sqlTable ="Category";
+        qb.setTables(sqlTable);
+        Cursor c = qb.query(db,sqlselect,null,null,null,null,null);
+        final List<Category> result = new ArrayList<>();
+        if (c.moveToFirst()){
+            do{
+                result.add(new Category(
+                        c.getInt(c.getColumnIndexOrThrow("categoryId")),
+                        c.getString(c.getColumnIndexOrThrow("image")),
+                        c.getString(c.getColumnIndexOrThrow("name"))
+                ));
+            }while (c.moveToNext());
+        }
+        return result;
+    };
+
+    // insert example data
     public void initDB (SQLiteDatabase db){
         String query = String.format("INSERT INTO Foods(description,image,discount,name,price) VALUES('%s', '%s','%s','%s','%s');",
                 "Example menu",
@@ -88,7 +129,10 @@ public class DBHandler extends SQLiteOpenHelper {
                 "10",
                 "Example",
                 "20");
-        db.execSQL(query);
+        String query2 = String.format("INSERT INTO Category(image,name) VALUES('%s','%s');",
+                "",
+                "Example category");
+        db.execSQL(query2);
     }
 
     // example to check if column exist
