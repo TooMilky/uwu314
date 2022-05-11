@@ -8,6 +8,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.uwu.csit314.Model.Order;
 
 public class DBHandler extends SQLiteOpenHelper {
 
@@ -49,8 +50,44 @@ public class DBHandler extends SQLiteOpenHelper {
                 + NAME_COL + " TEXT,"
                 + DURATION_COL + " TEXT)";
 
+        String categoryQuery = "CREATE TABLE " + "Category" + " ("
+                + "categoryId" + " INTEGER PRIMARY KEY AUTOINCREMENT, "
+                + "image" + " TEXT,"
+                + "name" + " TEXT)";
+
+        String menuQuery = "CREATE TABLE Foods (menuId INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                "description TEXT," +
+                "image TEXT," +
+                "discount TEXT," +
+                "name TEXT," +
+                "price TEXT)";
+
+        String orderDetailQuery = "CREATE TABLE OrderDetail (" +
+                "ID INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                "ProductId TEXT," +
+                "ProductName TEXT," +
+                "Quantity TEXT," +
+                "Price TEXT," +
+                "Discount TEXT," +
+                "Image TEXT)";
+
+
         // at last we are calling a exec sql
         // method to execute above sql query
+        db.execSQL(query);
+        db.execSQL(menuQuery);
+        db.execSQL(categoryQuery);
+        db.execSQL(orderDetailQuery);
+//        initDB(db);
+    }
+
+    public void initDB (SQLiteDatabase db){
+        String query = String.format("INSERT INTO Foods(description,image,discount,name,price) VALUES('%s', '%s','%s','%s','%s');",
+                "Example menu",
+                "",
+                "10",
+                "Example",
+                "20");
         db.execSQL(query);
     }
 
