@@ -54,6 +54,7 @@ public class DBHandler extends SQLiteOpenHelper {
                 + NAME_COL + " TEXT,"
                 + DURATION_COL + " TEXT)";
 
+        // id FK??
         String categoryQuery = "CREATE TABLE " + "Category" + " ("
                 + "categoryId" + " INTEGER PRIMARY KEY AUTOINCREMENT, "
                 + "image" + " TEXT,"
@@ -120,6 +121,26 @@ public class DBHandler extends SQLiteOpenHelper {
         }
         return result;
     };
+
+    // get all foods by ID
+    public List<Category> getFoodById (String categoryId)
+    {
+        SQLiteDatabase db = getReadableDatabase();
+        String query = String.format("SELECT * FROM Category WHERE categoryId ='%s';",categoryId);
+        Cursor c = db.rawQuery(query, null);
+        final List<Category> result = new ArrayList<>();
+        if (c.moveToFirst()){
+            do{
+                result.add(new Category(
+                        c.getInt(c.getColumnIndexOrThrow("categoryId")),
+                        c.getString(c.getColumnIndexOrThrow("image")),
+                        c.getString(c.getColumnIndexOrThrow("name"))
+                ));
+            }while (c.moveToNext());
+        }
+        return result;
+    }
+
 
     // insert example data
     public void initDB (SQLiteDatabase db){
